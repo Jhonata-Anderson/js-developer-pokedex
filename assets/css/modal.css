@@ -1,0 +1,204 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.modal.show {
+    display: flex !important;
+}
+
+.modal-card {
+    position: relative;
+    width: 450px;
+    max-width: 90%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    animation: popup 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.modal.show .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-header {
+    padding: 2rem 1.5rem 4rem 1.5rem;
+    position: relative;
+    color: #ffffff;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-info h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+}
+
+.header-info span {
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.type-badge {
+    padding: 0.2rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin: .1rem;
+    filter: brightness(1.1);
+}
+
+.modal-header img {
+    width: 160px;
+    height: 137px;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
+}
+
+.modal-body {
+    background: #ffffff;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 24px 24px 0 0;
+}
+
+.stats-title {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.stat-label {
+    width: 70px;
+    color: #888;
+    font-weight: 500;
+}
+
+.stat-value {
+    width: 35px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    margin-right: 12px;
+}
+
+
+.bar-bg {
+    flex: 1;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 3px;
+    transition: width 0.5s ease-in-out;
+}
+
+
+.physical-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.physical-info div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.physical-info small {
+    color: #888;
+    font-size: 0.75rem;
+}
+
+.physical-info strong {
+    color: #333;
+    margin-top: 2px;
+}
+
+#modalName {
+    margin: 0.5rem 0 0.25rem;
+    text-transform: capitalize;
+    color: #333;
+}
+
+#modalNumber {
+    margin: 0 0 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.modal-card .info {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
